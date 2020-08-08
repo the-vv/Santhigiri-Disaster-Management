@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SanthigiriDMS"
+    }
+  },
+  "defaultProject": "SanthigiriDMS",
+  "cli": {
+    "analytics": false
+  }
 }
