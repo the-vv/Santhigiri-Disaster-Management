@@ -1,0 +1,105 @@
+import { Component, OnInit } from '@angular/core';
+
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
+// for map url 
+@Pipe({
+  name: 'safe'
+})
+export class SafePipe implements PipeTransform {
+
+  constructor(private sanitizer: DomSanitizer) { }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+}
+
+const temparticle = {
+  "timestamp": 1561732525,
+  "articleCount": 10,
+  "articles": [
+      {
+          "title": "A Living Example",
+          "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+          "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+          "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+          "publishedAt": "2019-06-28 09:32:37 UTC",
+          "source": {
+              "name": "Southlake Style",
+              "url": "https://www.southlakestyle.com"
+          }
+      },
+      {
+        "title": "A Living Example",
+        "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+        "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+        "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+        "publishedAt": "2019-06-28 09:32:37 UTC",
+        "source": {
+            "name": "Southlake Style",
+            "url": "https://www.southlakestyle.com"
+        }
+    },
+    {
+      "title": "A Living Example",
+      "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+      "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+      "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+      "publishedAt": "2019-06-28 09:32:37 UTC",
+      "source": {
+          "name": "Southlake Style",
+          "url": "https://www.southlakestyle.com"
+      }
+  }
+  ]
+}
+
+@Component({
+  selector: 'app-newscards',
+  templateUrl: './newscards.component.html',
+  styleUrls: ['./newscards.component.scss']
+})
+export class NewscardsComponent implements OnInit {
+
+  static news: Array<any>;
+  Articles: Array<any>
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+    // fetch('https://gnews.io/api/v3/search?q=kerala&token=8e25fde6bd1f0a7206c273e51befbd81')
+    // .then(function (response) {
+    //     return response.json();
+    // })
+    // .then(function (data) {
+    //     console.log(data);
+    //     NewscardsComponent.news = data.articles
+    // })
+    // .catch(function (error) {
+    //     console.log(error);
+    // });
+
+    NewscardsComponent.news = temparticle.articles
+
+    this.TimerFunct()
+  }
+
+
+  TimerFunct() {
+    setTimeout(() => {    
+      if(NewscardsComponent.news){
+        console.log(NewscardsComponent.news)
+        if(NewscardsComponent.news.length > 0){
+          this.Articles = NewscardsComponent.news;        
+          console.log(this.Articles)
+        }
+      }
+      else
+      this.TimerFunct()
+    }, 500);
+  }
+
+}

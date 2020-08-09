@@ -1,0 +1,41 @@
+@media screen and (max-width:1024px){
+    .demo-card-square.mdl-card {
+        width: 250px;
+        height: 320px;
+        border-radius: 15px;
+        box-shadow: -2px 2px 5px black;
+        padding:0;
+        margin:10px;
+      }
+}
+@media screen and (min-width:1025px){
+    .demo-card-square.mdl-card {
+        width: 500px;
+        height: 320px;
+        border-radius: 15px;
+        box-shadow: -2px 2px 5px black;
+        padding:0;
+        margin:10px;
+      }
+      .horicards{
+          display: none;
+      }
+}
+
+.demo-card-square > .mdl-card__title {
+color: #fff;
+}
+
+.horicards{
+    width: 100%;
+    overflow:auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.horicards::-webkit-scrollbar {
+    display: none;
+  }
+  .horicards{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
