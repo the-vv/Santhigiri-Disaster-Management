@@ -7,6 +7,9 @@
         padding:0;
         margin:10px;
       }
+      div.larged{
+          display: none!important;
+      }
 }
 @media screen and (min-width:1025px){
     .demo-card-square.mdl-card {
@@ -17,7 +20,7 @@
         padding:0;
         margin:10px;
       }
-      .horicards{
+      .phone{
           display: none;
       }
 }
@@ -39,3 +42,5 @@ color: #fff;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  .mySlides {display:none;}
+  
