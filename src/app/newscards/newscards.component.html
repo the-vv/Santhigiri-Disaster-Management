@@ -17,3 +17,20 @@
     </div>
 </div>
 
+<div class="container-fluid larged">
+  <div class="row">
+    <div class="example-1 card mx-auto" *ngFor="let article of Articles">
+      <div class="wrapper">     
+       <div class="image" style="background-position: center; background-size: cover;" [ngStyle]="{ 'background-image': 'url(' + article.image + ')'}">
+       </div>        
+        <div class="data">
+          <div class="content">
+            <span class="author">{{article.source.name}}</span>
+            <h1 class="title"><a href="#" class="cardTitle">{{article.title | slice:0:40}}...</a></h1>
+            <p class="text">{{article.description | slice:0:100}}...</p>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>  
+</div>
