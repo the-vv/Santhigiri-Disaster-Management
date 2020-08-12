@@ -13,7 +13,7 @@
 }
 @media screen and (min-width:1025px){
     .demo-card-square.mdl-card {
-        width: 500px;
+        width: 400px;
         height: 320px;
         border-radius: 15px;
         box-shadow: -2px 2px 5px black;
@@ -44,3 +44,9 @@ color: #fff;
   }
   .mySlides {display:none;}
   
+  .news-title{
+    text-shadow: 2px 2px 3px #000;
+  }
+  .mdl-card__supporting-text  {
+    text-align: justify;
+  }

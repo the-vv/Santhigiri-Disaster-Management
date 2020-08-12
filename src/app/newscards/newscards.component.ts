@@ -21,8 +21,8 @@ const temparticle = {
   "articleCount": 10,
   "articles": [
       {
-          "title": "A Living Example",
-          "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+          "title": "A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
+          "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream. A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
           "url": "https://www.southlakestyle.com/community/people/a-living-example/",
           "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
           "publishedAt": "2019-06-28 09:32:37 UTC",
@@ -70,7 +70,7 @@ export class NewscardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // fetch('https://gnews.io/api/v3/search?q=kerala&token=8e25fde6bd1f0a7206c273e51befbd81')
+    // fetch('https://gnews.io/api/v3/search?q=kerala+rain&token=8e25fde6bd1f0a7206c273e51befbd81')
     // .then(function (response) {
     //     return response.json();
     // })
@@ -101,5 +101,6 @@ export class NewscardsComponent implements OnInit {
       this.TimerFunct()
     }, 500);
   }
+
 
 }
