@@ -34,6 +34,7 @@ export class AppComponent {
     }, {
     });
     this.getAll()
+
   }
 
   get f() { return this.registerForm.controls; }
