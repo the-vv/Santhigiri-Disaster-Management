@@ -44,7 +44,7 @@ export class AppComponent {
     this.itemRef.on('value', itemSnapshot => {
       this.items = [];
       itemSnapshot.forEach(itemSnap => {
-        console.log(itemSnap)
+        // console.log(itemSnap);
         this.items.push({
           "id": itemSnap.key,
           "value": itemSnap.val()

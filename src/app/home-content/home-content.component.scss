@@ -1,12 +1,20 @@
 
-  #contactform {
+  #main-home {
     position: relative;
     z-index: 0; /* The z-index should be higher than Google Maps */
     width: 100%;
     margin: 0;
     height:110%;
     padding: 10px;
-    background: black;
-    opacity: .45; /* Set the opacity for a slightly transparent Google Form */
-    color: white;
+    background-color: rgba($color: #000000, $alpha: 0.5);
   }
+.card{
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  color: white;
+}
+
+@media (min-width:768px){
+  .card{
+    height: 55vh;
+  }
+}
