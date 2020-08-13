@@ -12,6 +12,7 @@ import { NewscardsComponent } from './newscards/newscards.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeContentComponent } from './home-content/home-content.component';
 
 
 
@@ -28,7 +29,8 @@ var firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    NewscardsComponent
+    NewscardsComponent,
+    HomeContentComponent
   ],
   imports: [
     BrowserModule,

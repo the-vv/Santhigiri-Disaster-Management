@@ -1,0 +1,12 @@
+
+  #contactform {
+    position: relative;
+    z-index: 1; /* The z-index should be higher than Google Maps */
+    width: 300px;
+    margin: 60px auto 0;
+    padding: 10px;
+    background: black;
+    height: auto;
+    opacity: .45; /* Set the opacity for a slightly transparent Google Form */
+    color: white;
+  }

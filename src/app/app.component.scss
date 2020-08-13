@@ -1,0 +1,41 @@
+@media screen and (max-width:1024px){
+    .mdl-layout__content{
+        min-height: calc(100vh - 56px);
+    }
+}
+@media screen and (min-width:1025px){
+    .mdl-layout__content{
+        min-height: calc(100vh - 64px);
+    }    
+}
+.mdl-layout__content{    
+    background-color: red;
+}
+.main-content{
+    height: 50vh;
+    width:100%;
+}
+.news-content{  
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding-top: 30px;  
+    width:100%;
+    background-color: white;
+}
+
+
+#googlemaps {
+    height:100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+  }
+  
+.gmap_canvas{
+    width: 50%;
+    height: 60vh;
+    z-index: 0;
+}
+

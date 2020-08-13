@@ -70,19 +70,19 @@ export class NewscardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    fetch('https://gnews.io/api/v3/search?q=kerala+rain&token=8e25fde6bd1f0a7206c273e51befbd81')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-        NewscardsComponent.news = data.articles
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+    // fetch('https://gnews.io/api/v3/search?q=kerala+rain&token=8e25fde6bd1f0a7206c273e51befbd81')
+    // .then(function (response) {
+    //     return response.json();
+    // })
+    // .then(function (data) {
+    //     console.log(data);
+    //     NewscardsComponent.news = data.articles
+    // })
+    // .catch(function (error) {
+    //     console.log(error);
+    // });
 
-    // NewscardsComponent.news = temparticle.articles
+    NewscardsComponent.news = temparticle.articles
 
     this.TimerFunct()
   }
