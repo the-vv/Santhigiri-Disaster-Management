@@ -14,7 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeContentComponent } from './home-content/home-content.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 var firebaseConfig = {
   apiKey: "AIzaSyCRAE1JLUe2Nt8sWFo5_RhVuId_2vMgrZM",
@@ -35,6 +35,7 @@ var firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),

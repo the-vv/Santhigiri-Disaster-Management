@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsServiceService } from '../services/news-service.service'
 
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -56,6 +57,12 @@ const temparticle = {
   ]
 }
 
+export class NEWS{
+  timestamp: number;
+  articleCount: number;
+  articles: Array<any>;
+}
+
 @Component({
   selector: 'app-newscards',
   templateUrl: './newscards.component.html',
@@ -63,44 +70,18 @@ const temparticle = {
 })
 export class NewscardsComponent implements OnInit {
 
-  static news: Array<any>;
-  Articles: Array<any>
+  news: NEWS;
 
-  constructor() { }
+  constructor(
+    private News: NewsServiceService
+  ) { }
 
   ngOnInit(): void {
 
-    // fetch('https://gnews.io/api/v3/search?q=kerala+rain&token=8e25fde6bd1f0a7206c273e51befbd81')
-    // .then(function (response) {
-    //     return response.json();
-    // })
-    // .then(function (data) {
-    //     console.log(data);
-    //     NewscardsComponent.news = data.articles
-    // })
-    // .catch(function (error) {
-    //     console.log(error);
-    // });
-
-    NewscardsComponent.news = temparticle.articles
-
-    this.TimerFunct()
+    this.News.getNews()
+    .subscribe(response=>{
+      this.news = response;
+      console.log(this.news);
+    });
   }
-
-
-  TimerFunct() {
-    setTimeout(() => {    
-      if(NewscardsComponent.news){
-        console.log(NewscardsComponent.news)
-        if(NewscardsComponent.news.length > 0){
-          this.Articles = NewscardsComponent.news;        
-          console.log(this.Articles)
-        }
-      }
-      else
-      this.TimerFunct()
-    }, 500);
-  }
-
-  
 }
