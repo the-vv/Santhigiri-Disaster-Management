@@ -8,15 +8,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 import { NewscardsComponent } from './newscards/newscards.component';
+import { HomeContentComponent } from '././home-content/home-content.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeContentComponent } from './home-content/home-content.component';
+
 
 import { HttpClientModule } from '@angular/common/http';
-
+import { SafePipe } from './SafePipe'
 import {TempConverterPipe} from './home-content/temp-convertor.pipe';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyDKkVI2iH83Naw3uS8npFS-45aR5Mi4PDM",
@@ -32,8 +37,9 @@ var firebaseConfig = {
   declarations: [
     AppComponent,
     NewscardsComponent,
-    HomeContentComponent,
-    TempConverterPipe
+    TempConverterPipe,
+    SafePipe,
+    HomeContentComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,9 @@ var firebaseConfig = {
     MatButtonModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

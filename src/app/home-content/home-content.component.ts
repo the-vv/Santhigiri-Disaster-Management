@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../services/location.service';
 import { WeatherService } from '../services/weather.service';
+import { AppComponent } from '../app.component'
 
 export class Weather {
   Date: string;
@@ -28,7 +29,8 @@ export class HomeContentComponent implements OnInit {
 
   constructor(
     private Location: LocationService,
-    private wKey: WeatherService
+    private wKey: WeatherService,
+    private appcomp: AppComponent
   ) { }
 
   ngOnInit(): void {
@@ -38,11 +40,12 @@ export class HomeContentComponent implements OnInit {
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
-      // this.getWeatherkey();
+      this.getWeatherkey();
 
       //temporary for development   
-      this.weather = this.TempWeatherdata.DailyForecasts;   
-      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      // this.weather = this.TempWeatherdata.DailyForecasts;   
+      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      // this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + this.tempGeoData.LocalizedName + '&t=&z=15&ie=UTF8&iwloc=&output=embed'
     })
 
   }
@@ -53,6 +56,7 @@ export class HomeContentComponent implements OnInit {
       .subscribe(response => {
         this.locationKey = response.Key;
         this.Place = response.LocalizedName + ', ' + response.AdministrativeArea.LocalizedName;
+        this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=15&ie=UTF8&iwloc=&output=embed'
         console.log(this.locationKey)
         this.getWeather()
       })

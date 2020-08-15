@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import { LocationService } from './services/location.service';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +15,21 @@ export class AppComponent {
   submitted = false;
   public addType: boolean = true;
   public items: Array<any> = [];
-  public itemRef: firebase.database.Reference
+  public itemRef: firebase.database.Reference;
+
+  lat: number;
+  lot: number;
+  mapURL: string;
+  placeURL: string;
 
   constructor(private db: AngularFireDatabase,
     private formBuilder: FormBuilder,
-    private ref: ChangeDetectorRef) {
+    private ref: ChangeDetectorRef,
+    private Location: LocationService) {
   }
 
-  ngOnInit() {
+  ngOnInit() {    
+
     this.registerForm = this.formBuilder.group({
       Name: ['', Validators.required,],
       Email: ['', [Validators.required, Validators.email],],
@@ -33,8 +41,7 @@ export class AppComponent {
       place: ['', Validators.required,],
     }, {
     });
-    this.getAll()
-
+    this.getAll();
   }
 
   get f() { return this.registerForm.controls; }
@@ -80,4 +87,5 @@ export class AppComponent {
   goToList() {
     this.addType = false;
   }
+
 }
