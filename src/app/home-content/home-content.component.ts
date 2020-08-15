@@ -37,11 +37,12 @@ export class HomeContentComponent implements OnInit {
       this.lat = pos.lat;
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
-      this.getWeatherkey();
+
+      // this.getWeatherkey();
 
       //temporary for development   
-      // this.weather = this.TempWeatherdata.DailyForecasts;   
-      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      this.weather = this.TempWeatherdata.DailyForecasts;   
+      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
     })
 
   }

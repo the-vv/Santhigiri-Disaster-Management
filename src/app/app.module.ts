@@ -16,6 +16,8 @@ import { HomeContentComponent } from './home-content/home-content.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import {TempConverterPipe} from './home-content/temp-convertor.pipe';
+
 var firebaseConfig = {
   apiKey: "AIzaSyDKkVI2iH83Naw3uS8npFS-45aR5Mi4PDM",
   authDomain: "santhigiridm.firebaseapp.com",
@@ -30,7 +32,8 @@ var firebaseConfig = {
   declarations: [
     AppComponent,
     NewscardsComponent,
-    HomeContentComponent
+    HomeContentComponent,
+    TempConverterPipe
   ],
   imports: [
     BrowserModule,

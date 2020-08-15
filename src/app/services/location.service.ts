@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LocationService {
 
+
   constructor() { }
 
   getPosition(): Promise<any>
@@ -16,7 +17,8 @@ export class LocationService {
           resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
         },
         err => {
-          reject(err);
+          console.log(err);
+          alert('Without Location Permission, This Application will not work properly.\nPlease allow Location');
         });
     });
 
