@@ -77,14 +77,19 @@ export class NewscardsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
+    // this.setNews();
 
-    // this.News.getNews()
-    // .subscribe(response=>{
-    //   this.news = response;
-    //   console.log(this.news);
-    // });
-
-    this.news = temparticle;
+    this.news = temparticle;   //temporary for development
 
   }
+
+  setNews(){
+    this.News.getNews()
+    .subscribe(response=>{
+      this.news = response;
+      console.log(this.news);
+    });
+  }
+
 }

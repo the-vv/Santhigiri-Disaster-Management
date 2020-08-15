@@ -1,31 +1,36 @@
-
 <div id="main-home">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                
-            </div>
-            <div class="weather col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                      Weather Info
-                    </div>
-                    <div class="card-body" *ngIf="weather">
-                      <h3 class="card-title">
-                        
-                      </h3>
-                      <p class="card-text">
-                        
-                      </p>
-                      <p class="card-text">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 infoCard">
 
-                      </p>
-                    </div>
-                    <div class="card-footer text-muted text-center">
-                      Accudata
-                    </div>
-                  </div>
-            </div>
+      </div>
+      <div class="weather col-md-4">
+        <div class="card" *ngIf="weather">
+          <div class="card-header">
+            Weather Info
+          </div>
+          <div class="card-body" *ngFor="let day of weather">
+            <h3 class="card-title text-center">
+              You are in: {{Place}}
+            </h3>
+            <h3 class="card-title text-center">
+              {{day.Day.IconPhrase}}
+            </h3>
+            <p class="text-center">              
+              <img src="../../assets/weatherIcons/{{day.Day.Icon}}s.png" width="30%" alt="">
+            </p>
+            <p class="card-text text-center">
+              {{day.Day.PrecipitationIntensity}} {{day.Day.PrecipitationType}}
+            </p>
+            <p class="card-text text-center">
+              Temperature: {{day.Temperature.Minimum.Value}}°F - {{day.Temperature.Maximum.Value}}°F
+            </p>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px" alt=""></a>
+          </div>
         </div>
       </div>
-    </div>  
+    </div>
+  </div>
+</div>

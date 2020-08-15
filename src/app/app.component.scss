@@ -13,13 +13,13 @@
 // }
 
 .main-content{
-    height: 60vh;
+    height: 70vh;
     width:100%;
 }
 .news-content{  
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    padding-top: 30px;  
+    padding-top: 0px;  
     width:100%;
     background-color: white;
     position: absolute;
@@ -27,7 +27,7 @@
 
 
 #googlemaps {
-    height:50vh;
+    height:100vh;;
     width: 100%;
     position:absolute;
     top: 0;

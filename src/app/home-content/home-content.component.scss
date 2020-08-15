@@ -14,7 +14,12 @@
 }
 
 @media (min-width:768px){
-  .card{
-    height: 55vh;
+  .card, .infoCard{
+    height: 65vh;
   }
+}
+
+.infoCard{  
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  color: white;
 }
