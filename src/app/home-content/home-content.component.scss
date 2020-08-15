@@ -19,7 +19,38 @@
   }
 }
 
+@media (max-width:767px){
+  .card{
+    height: 20vh;
+    margin-top:5px;
+  } 
+  .infoCard{
+    height: 45vh;
+  }
+}
+
 .infoCard{  
   background-color: rgba($color: #000000, $alpha: 0.5);
   color: white;
+}
+
+.card, .infoCard{
+  border-radius: 15px;
+}
+
+@media screen and (max-width:1024px){
+  .larged{
+    display: none!important;
+  }
+  .phone{
+    display: inline;
+  }
+}
+@media screen and (min-width:1025px){
+  .phone{
+      display: none;
+  }
+  .larged{
+    display: inline;
+  }
 }

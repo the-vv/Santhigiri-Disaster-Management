@@ -1,33 +1,49 @@
 <div id="main-home">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 infoCard">
-
+      <div class="col-md-8 text-center">
+        <div class="infoCard">
+          <button type="button" class="btn btn-primary my-5">Button</button>
+        </div>
       </div>
       <div class="weather col-md-4">
         <div class="card" *ngIf="weather">
           <div class="card-header">
-            Weather Info
+            Weather Info<span class="d-md-none" *ngFor="let day of weather">: {{Place}}</span>
           </div>
           <div class="card-body" *ngFor="let day of weather">
-            <h3 class="card-title text-center">
+            <h3 class="card-title text-center d-none d-md-block">
               You are in: {{Place}}
             </h3>
-            <h3 class="card-title text-center">
+
+            <div class="d-md-none row m-0 p-0">
+              <div class="col-8">
+                <span class="d-md-none" *ngFor="let day of weather">
+                  {{day.Day.IconPhrase}} {{day.Temperature.Minimum.Value}}°F - {{day.Temperature.Maximum.Value}}°F
+                  <br>
+                  {{day.Day.PrecipitationIntensity}} {{day.Day.PrecipitationType}}
+                </span>
+              </div>
+              <div class="col-4">
+                <img src="../../assets/weatherIcons/{{day.Day.Icon}}s.png" class="" height="" alt="">
+              </div>
+            </div>
+            <h3 class="card-title d-none d-md-block text-center">
               {{day.Day.IconPhrase}}
             </h3>
-            <p class="text-center">              
-              <img src="../../assets/weatherIcons/{{day.Day.Icon}}s.png" width="30%" alt="">
+            <p class="d-none d-md-block text-center">
+              <img src="../../assets/weatherIcons/{{day.Day.Icon}}s.png" class="" width="200px" alt="">
             </p>
-            <p class="card-text text-center">
+            <p class="card-text text-center d-none d-md-block">
               {{day.Day.PrecipitationIntensity}} {{day.Day.PrecipitationType}}
             </p>
-            <p class="card-text text-center">
+            <p class="card-text text-center d-none d-md-block">
               Temperature: {{day.Temperature.Minimum.Value}}°F - {{day.Temperature.Maximum.Value}}°F
             </p>
           </div>
           <div class="card-footer text-muted text-center">
-            <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px" alt=""></a>
+            <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
+                alt=""></a>
           </div>
         </div>
       </div>
