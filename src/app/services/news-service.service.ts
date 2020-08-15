@@ -13,7 +13,7 @@ export class NEWS{
 })
 export class NewsServiceService {
 
-  NewsURL = 'https://gnews.io/api/v3/search?q=kerala&token=8e25fde6bd1f0a7206c273e51befbd81';
+  NewsURL = 'https://gnews.io/api/v3/search?q=kerala&image=required&token=8e25fde6bd1f0a7206c273e51befbd81';
 
   constructor(
     private http: HttpClient) { }

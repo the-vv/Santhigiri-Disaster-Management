@@ -11,12 +11,13 @@ export class WeatherService {
     private http: HttpClient) {
     }    
 
-    getKey(lot:number, lat:number): Observable<any>{
-      return this.http.get<any>('http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Z12rLGHLn6PxyxMLhvfiWQ8kAmcihdCr&q=' + lat + '%2C' + lot)
+    getKey(lat:number, lot:number): Observable<any>{
+      console.log(lat + ',' + lot);
+      return this.http.get<any>('https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Z12rLGHLn6PxyxMLhvfiWQ8kAmcihdCr&q=' + lot + ',' + lat)
     }
 
     getWeather(key:number): Observable<any>{
-      return this.http.get<any>('http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + key + '?apikey=Z12rLGHLn6PxyxMLhvfiWQ8kAmcihdCr')
+      return this.http.get<any>('https://dataservice.accuweather.com/forecasts/v1/daily/1day/' + key + '?apikey=Z12rLGHLn6PxyxMLhvfiWQ8kAmcihdCr')
     }
 
 }
