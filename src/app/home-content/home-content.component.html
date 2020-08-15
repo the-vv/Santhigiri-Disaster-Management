@@ -1,15 +1,15 @@
 <div id="main-home">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 text-center">
-        <div class="infoCard">
-          <button type="button" class="btn btn-primary my-5">Button</button>
+      <div class="col-md-8 col-xl-9 text-center">
+        <div class="infoCard d-flex align-items-center justify-content-center">
+          <button type="button" class="btn btn-primary">Button</button>
         </div>
       </div>
-      <div class="weather col-md-4">
+      <div class="weather col-md-4 col-xl-3">
         <div class="card" *ngIf="weather">
           <div class="card-header">
-            Weather Info<span class="d-md-none" *ngFor="let day of weather">: {{Place}}</span>
+            Weather<span class="d-md-none" *ngFor="let day of weather">: {{Place}}</span>
           </div>
           <div class="card-body" *ngFor="let day of weather">
             <h1 class="card-title d-none d-md-block text-center mt-5" style="font-size: 4em;">
