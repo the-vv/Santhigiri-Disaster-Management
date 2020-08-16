@@ -40,18 +40,17 @@ export class HomeContentComponent implements OnInit {
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
-      this.getWeatherkey();
+      // this.getWeatherkey();
 
       //temporary for development   
-      // this.weather = this.TempWeatherdata.DailyForecasts;   
-      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
-      // this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + this.tempGeoData.LocalizedName + '&t=&z=15&ie=UTF8&iwloc=&output=embed'
-    })
+      this.weather = this.TempWeatherdata.DailyForecasts;   
+      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=15&ie=UTF8&iwloc=&output=embed'
+    });
 
   }
 
   getWeatherkey() {
-    console.log(this.lot, this.lat, 'for key')
     this.wKey.getKey(this.lot, this.lat)
       .subscribe(response => {
         this.locationKey = response.Key;
@@ -59,7 +58,7 @@ export class HomeContentComponent implements OnInit {
         this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=15&ie=UTF8&iwloc=&output=embed'
         console.log(this.locationKey)
         this.getWeather()
-      })
+      });
   }
 
   getWeather() {

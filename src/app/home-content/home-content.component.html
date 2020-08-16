@@ -7,31 +7,34 @@
         </div>
       </div>
       <div class="weather col-md-4 col-xl-3">
+        <div class="loading d-flex align-items-center justify-content-center" *ngIf="!weather">
+          loading Weather...
+        </div>
         <div class="card" *ngIf="weather">
-          <div class="card-header">
-            Weather<span class="d-md-none" *ngFor="let day of weather">: {{Place}}</span>
+          <div class="card-header d-flex align-items-center">
+            <span class="d-none d-md-block" *ngFor="let day of weather">Weather</span><span class="d-md-none" *ngFor="let day of weather">{{Place}}</span>
           </div>
           <div class="card-body" *ngFor="let day of weather">
-            <h1 class="card-title d-none d-md-block text-center mt-5" style="font-size: 4em;">
+            <h1 class="card-title d-none d-md-block text-center mt-5" style="font-size: 6em;">
               {{day.Temperature.Minimum.Value | tempConverter : 'C'  }}°
             </h1>
             <h3 class="card-title text-center d-none d-md-block">
               {{Place}}
             </h3>
             <div class="d-md-none row m-0 px-0">
-              <div class="col-3 px-0">
-                <span class="d-md-none px-0" style="font-size: 10vw">
+              <div class="col-3 p-0 d-flex align-items-center justify-content-center">
+                <span class="d-md-none" style="font-size: 10vw">
                   {{day.Temperature.Minimum.Value | tempConverter : 'C'  }}°
                 </span>
               </div>
-              <div class="col-6 p-0">
+              <div class="col-6 p-0 d-flex align-items-center">
                 <span class="d-md-none">
                   {{day.Day.IconPhrase}}
                   <br>
                   {{day.Day.PrecipitationIntensity}} {{day.Day.PrecipitationType}}
                 </span>
               </div>
-              <div class="col-3 p-0">
+              <div class="col-3 p-0 d-flex align-items-center">
                 <img src="../../assets/weatherIcons/{{day.Day.Icon}}s.png" class="" height="" alt="">
               </div>
             </div>
@@ -42,9 +45,12 @@
               {{day.Day.IconPhrase}}, {{day.Day.PrecipitationIntensity}} {{day.Day.PrecipitationType}}
             </p>
           </div>
-          <div class="card-footer text-muted text-center pt-0 mt-0">
-            <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
-                alt=""></a>
+          <div class="card-footer text-muted text-center pt-0 mt-0 d-flex align-items-center">
+            <div
+              style="height:20px;width:100%;background-image: url('../../assets/weatherIcons/logo.png');background-repeat: no-repeat;background-position: center;background-size: 100px;">
+              <!-- <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
+                alt=""></a> -->
+            </div>
           </div>
         </div>
       </div>

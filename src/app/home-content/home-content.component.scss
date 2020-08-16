@@ -9,19 +9,19 @@
     text-shadow: -2px 3px 7px #000000;
     background-color: rgba($color: #000000, $alpha: 0.3);
   }
-.card{
+.card, .loading{
   background-color: rgba($color: #000000, $alpha: 0.5);
   color: white;
 }
 
 @media (min-width:768px){
-  .card, .infoCard{
+  .card, .infoCard, .loading{
     height: 65vh;
   }
 }
 
 @media (max-width:767px){
-  .card{
+  .card, .loading{
     height: 20vh;
     margin-top:5px;
   } 
@@ -34,8 +34,7 @@
   background-color: rgba($color: #000000, $alpha: 0.5);
   color: white;
 }
-
-.card, .infoCard{
+.card, .infoCard, .loading{
   border-radius: 15px;
 }
 
