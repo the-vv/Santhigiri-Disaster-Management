@@ -40,12 +40,12 @@ export class HomeContentComponent implements OnInit {
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
-      // this.getWeatherkey();
+      this.getWeatherkey();
 
       //temporary for development   
-      this.weather = this.TempWeatherdata.DailyForecasts;   
-      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
-      this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=15&ie=UTF8&iwloc=&output=embed'
+      // this.weather = this.temphrweather;   
+      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      // this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed'
     });
 
   }
@@ -55,19 +55,46 @@ export class HomeContentComponent implements OnInit {
       .subscribe(response => {
         this.locationKey = response.Key;
         this.Place = response.LocalizedName + ', ' + response.AdministrativeArea.LocalizedName;
-        this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=15&ie=UTF8&iwloc=&output=embed'
+        this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=13&ie=UTF8&iwloc=&output=embed'
         console.log(this.locationKey)
-        this.getWeather()
+        this.getHourlyWeather()
       });
   }
 
-  getWeather() {
+  getHourlyWeather(){
+    this.wKey.getHRWeather(this.locationKey)
+      .subscribe(response => {
+        this.weather = response;
+        console.log(this.weather)
+      })
+  }
+
+  getDayWeather() {
     this.wKey.getWeather(this.locationKey)
       .subscribe(response => {
         this.weather = response.DailyForecasts;
         console.log(this.weather)
       })
   }
+
+  temphrweather = [
+    {
+      "DateTime": "2020-08-17T15:00:00+01:00",
+      "EpochDateTime": 1597672800,
+      "WeatherIcon": 4,
+      "IconPhrase": "Intermittent clouds",
+      "HasPrecipitation": false,
+      "IsDaylight": true,
+      "Temperature": {
+        "Value": 79,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 47,
+      "MobileLink": "http://m.accuweather.com/en/ng/miango/255093/hourly-weather-forecast/255093?day=1&hbhhour=15&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ng/miango/255093/hourly-weather-forecast/255093?day=1&hbhhour=15&lang=en-us"
+    }
+  ]
 
   TempWeatherdata = {
     "Headline": {

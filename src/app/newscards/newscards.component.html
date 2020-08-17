@@ -10,7 +10,7 @@
         <h2 class="mdl-card__title-text news-title">{{article.title | slice:0:40}}...</h2>
       </div>
       <div class="mdl-card__supporting-text mx-auto p-3">
-        {{article.description | slice:0:160}}...
+        {{article.description | slice:0:80}}...
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a class="" href="{{article.url}}">
@@ -32,8 +32,9 @@
           <div class="data">
             <div class="content">
               <span class="author">{{article.source.name}}</span>
+              <hr class="p-0 m-0">
               <h1 class="title"><a href="{{article.url}}" class="cardTitle">{{article.title | slice:0:30}}...</a></h1>
-              <p class="text">{{article.description | slice:0:120}}...</p>
+              <p class="text">{{article.description | slice:0:80}}...</p>
             </div>
           </div>
         </div>
