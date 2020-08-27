@@ -21,27 +21,16 @@ const temparticle = {
   "timestamp": 1561732525,
   "articleCount": 10,
   "articles": [
-      {
-          "title": "A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
-          "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream. A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
-          "url": "https://www.southlakestyle.com/community/people/a-living-example/",
-          "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
-          "publishedAt": "2019-06-28 09:32:37 UTC",
-          "source": {
-              "name": "Southlake Style",
-              "url": "https://www.southlakestyle.com"
-          }
-      },
-      {
-        "title": "A Living Example",
-        "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
-        "url": "https://www.southlakestyle.com/community/people/a-living-example/",
-        "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
-        "publishedAt": "2019-06-28 09:32:37 UTC",
-        "source": {
-            "name": "Southlake Style",
-            "url": "https://www.southlakestyle.com"
-        }
+    {
+      "title": "A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
+      "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream. A Living Example lorem ipsom testing new long linecomments with slice pipe angular",
+      "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+      "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+      "publishedAt": "2019-06-28 09:32:37 UTC",
+      "source": {
+        "name": "Southlake Style",
+        "url": "https://www.southlakestyle.com"
+      }
     },
     {
       "title": "A Living Example",
@@ -50,14 +39,36 @@ const temparticle = {
       "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
       "publishedAt": "2019-06-28 09:32:37 UTC",
       "source": {
-          "name": "Southlake Style",
-          "url": "https://www.southlakestyle.com"
+        "name": "Southlake Style",
+        "url": "https://www.southlakestyle.com"
       }
-  }
+    },
+    {
+      "title": "A Living Example",
+      "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+      "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+      "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+      "publishedAt": "2019-06-28 09:32:37 UTC",
+      "source": {
+        "name": "Southlake Style",
+        "url": "https://www.southlakestyle.com"
+      }      
+    },
+    {
+      "title": "A Living Example",
+      "description": "City Councilmember Dr. Shahid Shafi Exemplifies The American Dream.",
+      "url": "https://www.southlakestyle.com/community/people/a-living-example/",
+      "image": "https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753",
+      "publishedAt": "2019-06-28 09:32:37 UTC",
+      "source": {
+        "name": "Southlake Style",
+        "url": "https://www.southlakestyle.com"
+      }      
+    }
   ]
 }
 
-export class NEWS{
+export class NEWS {
   timestamp: number;
   articleCount: number;
   articles: Array<any>;
@@ -77,20 +88,20 @@ export class NewscardsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
-    this.setNews();
+
+    // this.setNews();
 
     //  temporary for development
-    // this.news = temparticle;
+    this.news = temparticle;
 
   }
 
-  setNews(){
+  setNews() {
     this.News.getNews()
-    .subscribe(response=>{
-      this.news = response;
-      console.log(this.news);
-    });
+      .subscribe(response => {
+        this.news = response;
+        console.log(this.news);
+      });
   }
 
 }

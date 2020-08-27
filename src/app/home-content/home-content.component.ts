@@ -26,6 +26,7 @@ export class HomeContentComponent implements OnInit {
   DailyForecasts: Array<any>;
   Dailyweather: Array<any>;
   Place: string;
+  district: string;
 
   constructor(
     private Location: LocationService,
@@ -40,12 +41,14 @@ export class HomeContentComponent implements OnInit {
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
-      this.getWeatherkey();
-
-      //temporary for development   
-      // this.weather = this.temphrweather;   
-      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
-      // this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed'
+      // this.getWeatherkey();
+ 
+      // temporary for development   
+      this.weather = this.temphrweather;   
+      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+      this.district = this.tempGeoData.SupplementalAdminAreas[0].LocalizedName;
+      console.log(this.district)
     });
 
   }
@@ -57,6 +60,8 @@ export class HomeContentComponent implements OnInit {
         this.Place = response.LocalizedName + ', ' + response.AdministrativeArea.LocalizedName;
         this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=13&ie=UTF8&iwloc=&output=embed'
         console.log(this.locationKey)
+        this.district = response.SupplementalAdminAreas[0].LocalizedName;
+        console.log(this.district)
         this.getHourlyWeather()
       });
   }

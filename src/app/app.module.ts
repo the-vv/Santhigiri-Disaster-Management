@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SafePipe } from './SafePipe'
 import {TempConverterPipe} from './home-content/temp-convertor.pipe';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { InfocardComponent } from './infocard/infocard.component';
 
 
 var firebaseConfig = {
@@ -39,7 +40,8 @@ var firebaseConfig = {
     NewscardsComponent,
     TempConverterPipe,
     SafePipe,
-    HomeContentComponent
+    HomeContentComponent,
+    InfocardComponent
   ],
   imports: [
     BrowserModule,

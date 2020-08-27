@@ -2,64 +2,65 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 col-xl-9 text-center">
-        <div class="infoCard d-flex align-items-center justify-content-center">
-          Under Development           
+        <div class="infoCard">
+          <app-infocard></app-infocard>
         </div>
       </div>
+
       <div class="weather col-md-4 col-xl-3">
         <div class="loading d-flex align-items-center justify-content-center" *ngIf="!weather">
           <div class="mdl-spinner mdl-js-spinner is-active" style="width: 4rem; height: 4rem;"></div>
         </div>
-      <div class="card" *ngIf="weather">
-        <div class="card-header d-flex align-items-center">
-          <span class="d-none d-md-block" *ngFor="let day of weather">Weather</span><span class="d-md-none"
-            *ngFor="let day of weather">{{Place}}</span>
-        </div>
-        <div class="card-body" *ngFor="let day of weather">
-          <h1 class="card-title d-none d-md-block text-center mt-5" style="font-size: 7em;">
-            {{day.Temperature.Value | tempConverter : 'C'  }}°
-          </h1>
-          <h1 class="card-title text-center d-none d-md-block mt-4">
-            {{Place}}            
-          </h1>
-          <p class=" d-none d-md-block text-center ">
-            {{day.DateTime | date}}
-          </p>
-          <div class="d-md-none row m-0 px-0">
-            <div class="col-3 p-0 d-flex align-items-center justify-content-center">
-              <span class="d-md-none" style="font-size: 10vw">
-                {{day.Temperature.Value | tempConverter : 'C'  }}°
-              </span>
-            </div>
-            <div class="col-6 p-0 d-flex align-items-center">
-              <span class="d-md-none">
-                {{day.IconPhrase}}
-                <br>
-                {{day.DateTime | date}}
-              </span>
-            </div>
-            <div class="col-3 p-0 m-0 d-flex align-items-center">
-              <img src="../../assets/weatherIcons/{{day.WeatherIcon}}s.png" class="" height="" alt="">
-            </div>
+        <div class="card" *ngIf="weather">
+          <div class="card-header d-flex align-items-center">
+            <span class="d-none d-md-block" *ngFor="let day of weather">Weather</span><span class="d-md-none"
+              *ngFor="let day of weather">{{Place}}</span>
           </div>
-          <p class="d-none d-md-block text-center">
-            <img src="../../assets/weatherIcons/{{day.WeatherIcon}}s.png" class="" width="200px" alt="">
-          </p>
-          <p class="card-text text-center d-none d-md-block">
-            {{day.IconPhrase}}
-          </p>
-        </div>
-        <a href="http://www.accuweather.com/" target="">
-          <div class="card-footer text-muted text-center p-0 mt-0 d-flex align-items-center">
-            <div
-              style="height:25px;width:100%;background-image: url('../../assets/weatherIcons/logo.png');background-repeat: no-repeat;background-position: center;background-size: 100px;">
-              <!-- <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
+          <div class="card-body" *ngFor="let day of weather">
+            <h1 class="text-info card-title d-none d-md-block text-center mt-5" style="font-size: 7em;">
+              {{day.Temperature.Value | tempConverter : 'C'  }}°
+            </h1>
+            <h1 class="card-title text-center d-none d-md-block mt-5 mb-0 pb-0">
+              {{Place}}
+            </h1>
+            <p class="pt-0 mt-0 d-none d-md-block text-center ">
+              {{day.DateTime | date}}
+            </p>
+            <div class="d-md-none row m-0 px-0">
+              <div class="col-3 p-0 d-flex align-items-center justify-content-center">
+                <span class="text-info d-md-none" style="font-size: 10vw">
+                  {{day.Temperature.Value | tempConverter : 'C'  }}°
+                </span>
+              </div>
+              <div class="col-6 p-0 d-flex align-items-center">
+                <span class="d-md-none">
+                  {{day.IconPhrase}}
+                  <br>
+                  {{day.DateTime | date}}
+                </span>
+              </div>
+              <div class="col-3 p-0 m-0 d-flex align-items-center">
+                <img src="../../assets/weatherIcons/{{day.WeatherIcon}}s.png" class="" height="" alt="">
+              </div>
+            </div>
+            <p class="text-default h5 card-text text-center d-none d-md-block p-0 m-2">
+              {{day.IconPhrase}}
+            </p>
+            <p class="d-none d-md-block text-center p-0 m-0">
+              <img src="../../assets/weatherIcons/{{day.WeatherIcon}}s.png" class="" width="200px" alt="">
+            </p>
+          </div>
+          <a href="http://www.accuweather.com/" target="">
+            <div class="card-footer text-muted text-center p-0 mt-0 d-flex align-items-center">
+              <div
+                style="height:25px;width:100%;background-image: url('../../assets/weatherIcons/logo.png');background-repeat: no-repeat;background-position: center;background-size: 110px;">
+                <!-- <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
                 alt=""></a> -->
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
