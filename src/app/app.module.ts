@@ -23,6 +23,9 @@ import {TempConverterPipe} from './home-content/temp-convertor.pipe';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { InfocardComponent } from './infocard/infocard.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyDKkVI2iH83Naw3uS8npFS-45aR5Mi4PDM",
@@ -52,7 +55,8 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
     AppComponent
