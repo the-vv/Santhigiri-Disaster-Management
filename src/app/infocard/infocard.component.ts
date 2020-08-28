@@ -17,6 +17,7 @@ export class InfocardComponent implements OnInit {
   openModal(templateRef) {
     this.dialog.open(templateRef, {
       width: '500px',
+      height: '70%'
     });
   }
 
