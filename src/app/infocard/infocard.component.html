@@ -1,4 +1,4 @@
-<div class="container-fluid text-white text-left">
+<div class="container-fluid text-white text-left ">
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
             <a href="#panel1" class="mdl-tabs__tab is-active text-white">Helplines</a>
@@ -36,14 +36,14 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="mt-3 col-12 col-md-6 offset-md-3 text-center">
+                    <div class="col-12 text-center">
                         <a href="tel:108">
-                            <button type="button" class="btn btn-primary btn-lg btn-rounded btn-block">
-                                Call 108 Now <i class="fa fa-phone "></i>
+                            <button type="button" class="btn btn-primary btn-lg btn-rounded btn-sm btn-block">
+                                <span class="col-12 d-block"> Call 108 Now <i class="fa fa-phone "></i></span>
                             </button>
                         </a>
-                        <span class="text-info">(Disaster Management Services)</span>
                     </div>
+                    <span class="text-info col-12 text-center" style="font-size: .75em;">(Disaster Management Services)</span>
                 </div>
             </div>
         </div>
@@ -87,60 +87,7 @@
 
 <ng-template #Emergency>
     <h2 mat-dialog-title>Data will be ready soon...</h2>
-    <!-- <table class="table table-borderless align-middle">
-        <tbody class="text-white">
-            <tr>
-                <td>Row:1 Cell:1</td>
-                <td>Row:1 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:2 Cell:1</td>
-                <td>Row:2 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:3 Cell:1</td>
-                <td>Row:3 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:4 Cell:1</td>
-                <td>Row:4 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:5 Cell:1</td>
-                <td>Row:5 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:6 Cell:1</td>
-                <td>Row:6 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:7 Cell:1</td>
-                <td>Row:7 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:8 Cell:1</td>
-                <td>Row:8 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:9 Cell:1</td>
-                <td>Row:9 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:10 Cell:1</td>
-                <td>Row:10 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:11 Cell:1</td>
-                <td>Row:11 Cell:2</td>
-            </tr>
-            <tr>
-                <td>Row:12 Cell:1</td>
-                <td>Row:12 Cell:2</td>
-            </tr>
-        </tbody>
-    </table>
- -->
-<div mat-control-actions>
-    <button mat-button mat-dialog-close> Close </button>
-</div>
+    <div mat-control-actions>
+        <button mat-button mat-dialog-close> Close </button>
+    </div>
 </ng-template>
