@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -9,9 +10,13 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class InfocardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  districtNow: string;
+
+  constructor(public dialog: MatDialog,
+   public App: AppComponent) { }
 
   ngOnInit(): void {
+    console.log(this.districtNow)
   }
 
   openModal(templateRef) {

@@ -2,6 +2,7 @@
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
             <a href="#panel1" class="mdl-tabs__tab is-active text-white">Helplines</a>
+            <a href="#panel2" class="mdl-tabs__tab text-white">District</a>
             <a href="#panel3" class="mdl-tabs__tab text-white">Registration</a>
         </div>
 
@@ -47,6 +48,15 @@
                     </div>
                     <span class="text-info col-12 text-center" style="font-size: .75em;">(Disaster Management
                         Services)</span>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-tabs__panel" id="panel2">
+            <div class="container p-3">
+                <div class="row" *ngIf="App.District">
+                    <div class="col-12">
+                        <h2 class="">Current District: {{App.District}}</h2>                        
+                    </div>
                 </div>
             </div>
         </div>

@@ -20,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SafePipe } from './SafePipe'
 import {TempConverterPipe} from './home-content/temp-convertor.pipe';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { InfocardComponent } from './infocard/infocard.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -60,6 +59,7 @@ var firebaseConfig = {
   ],
   providers: [
     AppComponent
+
   ],
   bootstrap: [AppComponent]
 })
