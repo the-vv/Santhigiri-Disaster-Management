@@ -52,8 +52,8 @@
             </div>
         </div>
         <div class="mdl-tabs__panel is-active" id="panel2" *ngIf="App.District">
-            <div class="container p-3">
-                <div class="row" *ngIf="App.District">
+            <div class="container p-3 dcontainer">
+                <div class="row current" *ngIf="App.District">
                     <div class="col-12">
                         <h3 class="text-success p-0 m-0">Current District: {{App.District}}</h3>
                     </div>
@@ -78,7 +78,7 @@
                         <p class="h6">Explore other DIstricts</p>
                     </div>
                     <div class="col-12">
-                        <div class="d-flex districts">
+                        <div class="districts">
                             <table class="table align-middle table-striped table-hover table-borderless">
                                 <tbody>
                                     <tr *ngFor="let row of Districts" class="text-white">
