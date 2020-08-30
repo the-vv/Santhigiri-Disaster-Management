@@ -22,6 +22,7 @@ import { SafePipe } from './SafePipe'
 import {TempConverterPipe} from './home-content/temp-convertor.pipe';
 import { InfocardComponent } from './infocard/infocard.component';
 
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DistrictDialogeComponent } from './district-dialoge/district-dialoge.component';
 
@@ -57,7 +58,8 @@ var firebaseConfig = {
     AngularFireDatabaseModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   providers: [
     AppComponent

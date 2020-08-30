@@ -89,10 +89,10 @@ export class NewscardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.setNews();
+    this.setNews();
 
     //  temporary for development
-    this.news = temparticle;
+    // this.news = temparticle;
 
   }
 

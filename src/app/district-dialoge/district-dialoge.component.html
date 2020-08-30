@@ -1,9 +1,9 @@
-<h2 mat-dialog-title>{{data.district}}</h2>
+<h2 mat-dialog-title>{{data.district | titlecase}}</h2>
 <mat-dialog-content class="mat-typography">
     <table class="table align-middle table-striped table-hover table-borderless">
         <tbody>
             <tr *ngFor="let row of data.data" class="text-white">
-                <td scope="col">{{row.Name}}</td>
+                <td scope="col">{{row.Name | titlecase}}</td>
                 <td scope="col">
                     <a href="tel:{{row.Number}}">
                         <button type="button" class="btn btn-danger btn-rounded btn-sm"><i

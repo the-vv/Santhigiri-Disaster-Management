@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog,  } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
 import { DistrictDialogeComponent } from '../district-dialoge/district-dialoge.component'
 
@@ -18,9 +18,10 @@ export class InfocardComponent implements OnInit {
     public App: AppComponent) { }
 
   ngOnInit(): void {
-    for (let i of Object.keys(this.DistrictWise)) {
-      this.Districts.push(i)
+    for (let district of Object.keys(this.DistrictWise)) {
+      this.Districts.push(district)
     } 
+    this.Districts.sort()
   }
   openDistrict(dist, distr) {
     this.dialog.open(DistrictDialogeComponent, {
