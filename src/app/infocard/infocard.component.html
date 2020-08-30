@@ -1,12 +1,12 @@
 <div class="container-fluid text-white text-left ">
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
-            <a href="#panel1" class="mdl-tabs__tab is-active text-white">Helplines</a>
-            <a href="#panel2" class="mdl-tabs__tab text-white">District</a>
+            <a href="#panel1" class="mdl-tabs__tab text-white">Helplines</a>
+            <a href="#panel2" class="mdl-tabs__tab is-active text-white" *ngIf="App.District">District</a>
             <a href="#panel3" class="mdl-tabs__tab text-white">Registration</a>
         </div>
 
-        <div class="mdl-tabs__panel is-active" id="panel1">
+        <div class="mdl-tabs__panel" id="panel1">
             <div class="container p-3">
                 <div class="row">
                     <div class="h3 col-12 text-info">
@@ -51,37 +51,48 @@
                 </div>
             </div>
         </div>
-        <div class="mdl-tabs__panel" id="panel2">
+        <div class="mdl-tabs__panel is-active" id="panel2" *ngIf="App.District">
             <div class="container p-3">
                 <div class="row" *ngIf="App.District">
                     <div class="col-12">
                         <h3 class="text-success p-0 m-0">Current District: {{App.District}}</h3>
                     </div>
                     <div class="col-12">
-                        <table class="table table-borderless table-hover align-middle mt-0 pt-0">
-                            <tbody>
-                                <tr class="py-3 text-white">
-                                    <td>Emergency Numbers: </td>
-                                    <td>
-                                        <button type="button" class="btn btn-light btn-rounded btn-sm"
-                                            >Show</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                       
                     </div>
                 </div>
-            </div>
-            <div class="mdl-tabs__panel" id="panel3">
-                <div class="container p-3">
-                    <div class="row">
-                        <div class="col-12">
-                            Will be ready soon
+                <div class="row">
+                    <div class="col-12">
+                        <p class="h6">Explore other DIstricts</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex districts">
+                            <table class="table align-middle table-striped table-hover table-borderless">
+                                <tbody>
+                                    <tr *ngFor="let row of Districts" class="text-white">
+                                        <td scope="col">{{row}}</td>
+                                        <td scope="col">
+                                            <a href="">
+                                                <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                                        class="fa fa-phone "></i></button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="mdl-tabs__panel" id="panel3">
+            <div class="container p-3">
+                <div class="row">
+                    <div class="col-12">
+                        Will be ready soon
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -144,3 +155,26 @@
             <button mat-button mat-dialog-close> Close </button>
         </div>
     </ng-template>
+
+    <ng-template #DistruictNum>
+        <h2 mat-dialog-title>Control Rooms</h2>
+        <mat-dialog-content class="mat-typography">
+            <table class="table align-middle table-striped table-hover table-borderless">
+                <tbody>
+                    <tr *ngFor="let row of DistrictWise[App.District.toLowerCase()]" class="text-white">
+                        <td scope="col">{{row.Name}}</td>
+                        <td scope="col">
+                            <a href="tel:{{row.Number}}">
+                                <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                        class="fa fa-phone "></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+        </mat-dialog-actions>
+    </ng-template>
+</div>

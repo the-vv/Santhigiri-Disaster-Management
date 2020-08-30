@@ -11,11 +11,15 @@ import { AppComponent } from '../app.component';
 export class InfocardComponent implements OnInit {
 
   districtNow: string;
+  Districts = [];
 
   constructor(public dialog: MatDialog,
-   public App: AppComponent) { }
+    public App: AppComponent) { }
 
   ngOnInit(): void {
+    for (let i of Object.keys(this.DistrictWise)) {
+      this.Districts.push(i)
+    } 
   }
 
   openModal(templateRef) {
@@ -667,345 +671,347 @@ export class InfocardComponent implements OnInit {
     ],
     palakkad: [
       {
-        "Name":"State Control Room ",
-        "Number":1070
+        "Name": "State Control Room ",
+        "Number": 1070
       },
       {
-        "Name":"2. Collectorate ",
-        "Number":"0491-2505309"
+        "Name": "Collectorate ",
+        "Number": "0491-2505309"
       },
       {
-        "Name":"Police Control Room ",
-        "Number":"0491-2522340"
+        "Name": "Police Control Room ",
+        "Number": "0491-2522340"
       },
       {
-        "Name":"Accident/Emergency Help Line",
-        "Number":108
+        "Name": "Accident/Emergency Help Line",
+        "Number": 108
       },
       {
-        "Name":"Fire and Rescue ",
-        "Number":101
+        "Name": "Fire and Rescue ",
+        "Number": 101
       },
       {
-        "Name":" Ambulance Help Line ",
-        "Number":102
+        "Name": " Ambulance Help Line ",
+        "Number": 102
       },
       {
-        "Name":"Vanitha Help Line",
-        "Number":1090
+        "Name": "Vanitha Help Line",
+        "Number": 1090
       },
       {
-        "Name":"Child Line ",
-        "Number":"0491-2570291"
+        "Name": "Child Line ",
+        "Number": "0491-2570291"
       },
       {
-        "Name":"tate Vanitha Cell (TVM) ",
-        "Number":"0471-2338100"
+        "Name": "tate Vanitha Cell (TVM) ",
+        "Number": "0471-2338100"
       },
       {
-        "Name":"Women’s Cell, Palakkad ",
-        "Number":"0491-2504650"
+        "Name": "Women’s Cell, Palakkad ",
+        "Number": "0491-2504650"
       },
       {
-        "Name":"Sexual Harasment (Safe Women)",
-        "Number":1091
+        "Name": "Sexual Harasment (Safe Women)",
+        "Number": 1091
       },
       {
-        "Name":" Highway Helpline Numbers of Kerala Police ",
-        "Number":"9846 100 100"
+        "Name": " Highway Helpline Numbers of Kerala Police ",
+        "Number": "9846 100 100"
       },
       {
-        "Name":"Railway Helpline Numbers of Kerala Police ",
-        "Number":"9846 200 100"
+        "Name": "Railway Helpline Numbers of Kerala Police ",
+        "Number": "9846 200 100"
       },
       {
-        "Name":"KSRTC Palakkad ",
-        "Number":"0491-2520098"
+        "Name": "KSRTC Palakkad ",
+        "Number": "0491-2520098"
       },
       {
-        "Name":"15. KSEB Palakkad ",
-        "Number":"0491-2537053"
+        "Name": "KSEB Palakkad ",
+        "Number": "0491-2537053"
       }
     ],
     malappuram: [
       {
-        "Name":"Disaster Managemet, Collectorate",
-        "Number":"0483 2736320"
+        "Name": "Disaster Managemet, Collectorate",
+        "Number": "0483 2736320"
       },
       {
-        "Name":"M.S.P ,Commandant",
-        "Number":"0483-2734921"
+        "Name": "M.S.P ,Commandant",
+        "Number": "0483-2734921"
       },
       {
-        "Name":"M.S.P Melmuri",
-        "Number":"0483-2779108"
+        "Name": "M.S.P Melmuri",
+        "Number": "0483-2779108"
       },
       {
-        "Name":"S.R.A.F Pandikkad",
-        "Number":" 0483-2783397"
+        "Name": "S.R.A.F Pandikkad",
+        "Number": " 0483-2783397"
       },
       {
-        "Name":"Fire & Rescue,Asst. Divisional Officer",
-        "Number":9496468129
+        "Name": "Fire & Rescue,Asst. Divisional Officer",
+        "Number": 9496468129
       },
       {
-        "Name":"Fire Force, Ponnani",
-        "Number":" 0494-2666022"
+        "Name": "Fire Force, Ponnani",
+        "Number": " 0494-2666022"
       },
       {
-        "Name":" Fire Force, Malappuram",
-        "Number":" 0483-2734800"
+        "Name": " Fire Force, Malappuram",
+        "Number": " 0483-2734800"
       },
       {
-        "Name":" Fire Force, Tirur",
-        "Number":" 0494-2422333"
+        "Name": " Fire Force, Tirur",
+        "Number": " 0494-2422333"
       },
       {
-        "Name":" Fire Force, Perinthalmanna",
-        "Number":" 04933-227800"
+        "Name": " Fire Force, Perinthalmanna",
+        "Number": " 04933-227800"
       },
       {
-        "Name":"Fire Force, Nilambur",
-        "Number":"04931-224005"
+        "Name": "Fire Force, Nilambur",
+        "Number": "04931-224005"
       },
       {
-        "Name":"D.M.O (Health)",
-        "Number":"0483-2737857"
+        "Name": "D.M.O (Health)",
+        "Number": "0483-2737857"
       },
       {
-        "Name":"D.M.O (Ayurveda)",
-        "Number":"0483-273485"
+        "Name": "D.M.O (Ayurveda)",
+        "Number": "0483-273485"
       },
       {
-        "Name":"D.M.O (homeo)",
-        "Number":"0483-273138"
+        "Name": "D.M.O (homeo)",
+        "Number": "0483-273138"
       },
       {
-        "Name":"Food and Safety",
-        "Number":"0483-2732121"
+        "Name": "Food and Safety",
+        "Number": "0483-2732121"
       },
       {
-        "Name":" C.I. Valanchery",
-        "Number":" 0494-644143"
+        "Name": " C.I. Valanchery",
+        "Number": " 0494-644143"
       },
       {
-        "Name":"C.I. Ponnani",
-        "Number":"0494-2666027"
+        "Name": "C.I. Ponnani",
+        "Number": "0494-2666027"
       },
       {
-        "Name":" Fisheries,Dy.Director, Ponnani",
-        "Number":" 0494-2666428"
+        "Name": " Fisheries,Dy.Director, Ponnani",
+        "Number": " 0494-2666428"
       },
       {
-        "Name":"Port Officer, Ponnani",
-        "Number":"0494-2666058"
+        "Name": "Port Officer, Ponnani",
+        "Number": "0494-2666058"
       },
       {
-        "Name":"Indian Navy,Cochin",
-        "Number":"0484-2872466"
+        "Name": "Indian Navy,Cochin",
+        "Number": "0484-2872466"
       },
       {
-        "Name":"Camp Office, Ernakulam collectorate",
-        "Number":"0484-2372902"
+        "Name": "Camp Office, Ernakulam collectorate",
+        "Number": "0484-2372902"
       },
       {
-        "Name":"Commando Operations",
-        "Number":"0484-2218121"
+        "Name": "Commando Operations",
+        "Number": "0484-2218121"
       },
       {
-        "Name":"coat guard, District commander",
-        "Number":"0484-2218121"
+        "Name": "coat guard, District commander",
+        "Number": "0484-2218121"
       },
       {
-        "Name":"Boat rescue services, kerala",
-        "Number":"0484-2218121"
+        "Name": "Boat rescue services, kerala",
+        "Number": "0484-2218121"
       },
       {
-        "Name":"Indian Oil,Cochin",
-        "Number":9447498260
+        "Name": "Indian Oil,Cochin",
+        "Number": 9447498260
       },
       {
-        "Name":"Hindustan Petroleum, Cochin",
-        "Number":9446346160
+        "Name": "Hindustan Petroleum, Cochin",
+        "Number": 9446346160
       },
       {
-        "Name":"Bharat Petroleum, Cochin",
-        "Number":9846244022
+        "Name": "Bharat Petroleum, Cochin",
+        "Number": 9846244022
       }
     ],
     kozhikode: [
       {
-        "Name":"Citizen’s Call center",
-        "Number":155300
+        "Name": "Citizen’s Call center",
+        "Number": 155300
       },
       {
-        "Name":"Comissioner of Rescue & Relief",
-        "Number":1070
+        "Name": "Comissioner of Rescue & Relief",
+        "Number": 1070
       },
       {
-        "Name":"Crime Stopper",
-        "Number":1090
+        "Name": "Crime Stopper",
+        "Number": 1090
       },
       {
-        "Name":"Women Helpline",
-        "Number":1091
+        "Name": "Women Helpline",
+        "Number": 1091
       },
       {
-        "Name":"Child Help line",
-        "Number":1098
+        "Name": "Child Help line",
+        "Number": 1098
       },
       {
-        "Name":"Disaster Help Line",
-        "Number":1077
+        "Name": "Disaster Help Line",
+        "Number": 1077
       },
       {
-        "Name":"BSNL Help Line",
-        "Number":1500
+        "Name": "BSNL Help Line",
+        "Number": 1500
       },
       {
-        "Name":"Police Control Room",
-        "Number":100
+        "Name": "Police Control Room",
+        "Number": 100
       },
       {
-        "Name":"Fire and Rescue",
-        "Number":101
+        "Name": "Fire and Rescue",
+        "Number": 101
       },
       {
-        "Name":"Ambulance Help Line",
-        "Number":102
+        "Name": "Ambulance Help Line",
+        "Number": 102
       },
       {
-        "Name":"Accident Help Line",
-        "Number":108
+        "Name": "Accident Help Line",
+        "Number": 108
       },
       {
-        "Name":"Vanitha Helpline (Police)",
-        "Number":9995399953
+        "Name": "Vanitha Helpline (Police)",
+        "Number": 9995399953
       },
       {
-        "Name":"Vanitha – Nirbhaya",
-        "Number":9833312222
+        "Name": "Vanitha – Nirbhaya",
+        "Number": 9833312222
       }
     ],
     wayanad: [
       {
-        "Name":"DEOC Help Line Number",
-        "Number":"04936 204151"
+        "Name": "DEOC Help Line Number",
+        "Number": "04936 204151"
       },
       {
-        "Name":"Tribal Help Line Number",
-        "Number":"04936 203400"
+        "Name": "Tribal Help Line Number",
+        "Number": "04936 203400"
       },
       {
-        "Name":"Police Help Line Number",
-        "Number":"04396 202525"
+        "Name": "Police Help Line Number",
+        "Number": "04396 202525"
       },
       {
-        "Name":"Fire Force Help Line Number",
-        "Number":"04936 202333"
+        "Name": "Fire Force Help Line Number",
+        "Number": "04936 202333"
       },
       {
-        "Name":"Tele Medicine Help Line Number",
-        "Number":"04936 203400"
+        "Name": "Tele Medicine Help Line Number",
+        "Number": "04936 203400"
       },
       {
-        "Name":"Travell Pass Help Line Number",
-        "Number":9388106410
+        "Name": "Travell Pass Help Line Number",
+        "Number": 9388106410
       },
       {
-        "Name":"Agricultural Office Help Line Number",
-        "Number":"04936 202506"
+        "Name": "Agricultural Office Help Line Number",
+        "Number": "04936 202506"
       },
       {
-        "Name":"Migrant Labours Help Line Number",
-        "Number":4936203905
+        "Name": "Migrant Labours Help Line Number",
+        "Number": 4936203905
       }
     ],
     kannur: [
       {
-        "Name":"POLICE CONTROL ROOM",
-        "Number":" 100"
+        "Name": "POLICE CONTROL ROOM",
+        "Number": " 100"
       },
       {
-        "Name":"POLICE HELP-LINE",
-        "Number":" 0471-324 3000"
+        "Name": "POLICE HELP-LINE",
+        "Number": " 0471-324 3000"
       },
       {
-        "Name":"POLICE MESSAGE CENTER",
-        "Number":" 94 97 900000"
+        "Name": "POLICE MESSAGE CENTER",
+        "Number": " 94 97 900000"
       },
       {
-        "Name":"POLICE HIGH WAY HELP LINE",
-        "Number":" 9846 100 100"
+        "Name": "POLICE HIGH WAY HELP LINE",
+        "Number": " 9846 100 100"
       },
       {
-        "Name":"FIRE STATION",
-        "Number":" 101"
+        "Name": "FIRE STATION",
+        "Number": " 101"
       },
       {
-        "Name":"AMBULANCE",
-        "Number":" 108"
+        "Name": "AMBULANCE",
+        "Number": " 108"
       },
       {
-        "Name":"WOMEN HELPLINE",
-        "Number":" 1091"
+        "Name": "WOMEN HELPLINE",
+        "Number": " 1091"
       },
       {
-        "Name":"CRIME STOPPER",
-        "Number":" 1091"
+        "Name": "CRIME STOPPER",
+        "Number": " 1091"
       },
       {
-        "Name":"HIGH WAY ALERT",
-        "Number":" 9846100100"
+        "Name": "HIGH WAY ALERT",
+        "Number": " 9846100100"
       },
       {
-        "Name":"RAIL ALERT",
-        "Number":" 9846200100"
+        "Name": "RAIL ALERT",
+        "Number": " 9846200100"
       }
     ],
     kasaragod: [
       {
-        "Name":"State Control Room",
-        "Number":"0471 – 2331639"
+        "Name": "State Control Room",
+        "Number": "0471 – 2331639"
       },
       {
-        "Name":"State Emergency Operation Centre",
-        "Number":"0471–2364424"
+        "Name": "State Emergency Operation Centre",
+        "Number": "0471–2364424"
       },
       {
-        "Name":"Ernakulam Collectorate ( For providing NDRF/NAVY service)",
-        "Number":"0484 – 2423513"
+        "Name": "Ernakulam Collectorate ( For providing NDRF/NAVY service)",
+        "Number": "0484 – 2423513"
       },
       {
-        "Name":"Collectorate Kasaragod",
-        "Number":"04994 -257700"
+        "Name": "Collectorate Kasaragod",
+        "Number": "04994 -257700"
       },
       {
-        "Name":"Deputy Director of Fisheries, Kasaragod at Kanhangad",
-        "Number":"04672 202537"
+        "Name": "Deputy Director of Fisheries, Kasaragod at Kanhangad",
+        "Number": "04672 202537"
       },
       {
-        "Name":"District Medical Officer, Kasaragod at Kanhangad",
-        "Number":"04672 209433"
+        "Name": "District Medical Officer, Kasaragod at Kanhangad",
+        "Number": "04672 209433"
       },
       {
-        "Name":"Coastal Police station, Kasaragod",
-        "Number":"04994 224800"
+        "Name": "Coastal Police station, Kasaragod",
+        "Number": "04994 224800"
       },
       {
-        "Name":"District Police Chief",
-        "Number":"04994 230553"
+        "Name": "District Police Chief",
+        "Number": "04994 230553"
       },
       {
-        "Name":"Fire & Rescue Service, Kasaragod",
-        "Number":"04994 -230101"
+        "Name": "Fire & Rescue Service, Kasaragod",
+        "Number": "04994 -230101"
       },
       {
-        "Name":"Mangalore Disaster Management",
-        "Number":"0824 2220584"
+        "Name": "Mangalore Disaster Management",
+        "Number": "0824 2220584"
       }
     ]
   }
 
 }
+
+
 
