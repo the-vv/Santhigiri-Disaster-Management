@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{data.district}}</h2>
+<mat-dialog-content class="mat-typography">
+    <table class="table align-middle table-striped table-hover table-borderless">
+        <tbody>
+            <tr *ngFor="let row of data.data" class="text-white">
+                <td scope="col">{{row.Name}}</td>
+                <td scope="col">
+                    <a href="tel:{{row.Number}}">
+                        <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                class="fa fa-phone "></i></button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

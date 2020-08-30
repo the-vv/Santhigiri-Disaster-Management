@@ -58,7 +58,19 @@
                         <h3 class="text-success p-0 m-0">Current District: {{App.District}}</h3>
                     </div>
                     <div class="col-12">
-                       
+                        <table class="table table-borderless table-hover align-middle mt-0 pt-0">
+                            <tbody>
+                                <tr class="py-3 text-white">
+                                    <td>
+                                        Emergency Numbers:
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-light btn-rounded btn-sm"
+                                            (click)="openDistrict(DistrictWise[App.District.toLowerCase()], App.District.toLowerCase())">Show</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="row">
@@ -72,10 +84,8 @@
                                     <tr *ngFor="let row of Districts" class="text-white">
                                         <td scope="col">{{row}}</td>
                                         <td scope="col">
-                                            <a href="">
-                                                <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
-                                                        class="fa fa-phone "></i></button>
-                                            </a>
+                                            <button type="button" class="btn btn-light btn-rounded btn-sm"
+                                            (click)="openDistrict(DistrictWise[row], row)">Show</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -156,25 +166,4 @@
         </div>
     </ng-template>
 
-    <ng-template #DistruictNum>
-        <h2 mat-dialog-title>Control Rooms</h2>
-        <mat-dialog-content class="mat-typography">
-            <table class="table align-middle table-striped table-hover table-borderless">
-                <tbody>
-                    <tr *ngFor="let row of DistrictWise[App.District.toLowerCase()]" class="text-white">
-                        <td scope="col">{{row.Name}}</td>
-                        <td scope="col">
-                            <a href="tel:{{row.Number}}">
-                                <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
-                                        class="fa fa-phone "></i></button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </mat-dialog-content>
-        <mat-dialog-actions align="end">
-            <button mat-button mat-dialog-close>Cancel</button>
-        </mat-dialog-actions>
-    </ng-template>
 </div>

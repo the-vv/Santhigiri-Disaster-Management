@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
+import { DistrictDialogeComponent } from '../district-dialoge/district-dialoge.component'
 
 
 @Component({
@@ -21,6 +22,15 @@ export class InfocardComponent implements OnInit {
       this.Districts.push(i)
     } 
   }
+  openDistrict(dist, distr) {
+    this.dialog.open(DistrictDialogeComponent, {
+      data: {
+        data: dist,
+        district: distr
+      }
+    });
+  }
+  
 
   openModal(templateRef) {
     this.dialog.open(templateRef, {

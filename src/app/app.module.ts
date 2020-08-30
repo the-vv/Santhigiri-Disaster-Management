@@ -23,6 +23,7 @@ import {TempConverterPipe} from './home-content/temp-convertor.pipe';
 import { InfocardComponent } from './infocard/infocard.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { DistrictDialogeComponent } from './district-dialoge/district-dialoge.component';
 
 
 
@@ -43,7 +44,8 @@ var firebaseConfig = {
     TempConverterPipe,
     SafePipe,
     HomeContentComponent,
-    InfocardComponent
+    InfocardComponent,
+    DistrictDialogeComponent
   ],
   imports: [
     BrowserModule,
