@@ -21,7 +21,8 @@ export class AppComponent {
   lot: number;
   mapURL: string;
   placeURL: string;
-  District: string
+  District: string;
+  place: string;
 
   constructor(private db: AngularFireDatabase,
     private formBuilder: FormBuilder,

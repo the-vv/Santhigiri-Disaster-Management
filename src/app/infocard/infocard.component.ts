@@ -16,7 +16,6 @@ export class InfocardComponent implements OnInit {
    public App: AppComponent) { }
 
   ngOnInit(): void {
-    console.log(this.districtNow)
   }
 
   openModal(templateRef) {

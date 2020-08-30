@@ -26,14 +26,14 @@
                                     <td>Hospitals: </td>
                                     <td>
                                         <button type="button" class="btn btn-light btn-rounded btn-sm"
-                                        (click)="openModal(HospitalNum)">Show</button>
+                                            (click)="openModal(HospitalNum)">Show</button>
                                     </td>
                                 </tr>
                                 <tr class="h5 text-white">
                                     <td>Police Control Room: </td>
                                     <td>
                                         <button type="button" class="btn btn-light btn-rounded btn-sm"
-                                        (click)="openModal(ControlRoomNum)">Show</button>
+                                            (click)="openModal(ControlRoomNum)">Show</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -55,80 +55,92 @@
             <div class="container p-3">
                 <div class="row" *ngIf="App.District">
                     <div class="col-12">
-                        <h2 class="">Current District: {{App.District}}</h2>                        
+                        <h3 class="text-success p-0 m-0">Current District: {{App.District}}</h3>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="mdl-tabs__panel" id="panel3">
-            <div class="container p-3">
-                <div class="row">
                     <div class="col-12">
-                        Will be ready soon
+                        <table class="table table-borderless table-hover align-middle mt-0 pt-0">
+                            <tbody>
+                                <tr class="py-3 text-white">
+                                    <td>Emergency Numbers: </td>
+                                    <td>
+                                        <button type="button" class="btn btn-light btn-rounded btn-sm"
+                                            >Show</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            <div class="mdl-tabs__panel" id="panel3">
+                <div class="container p-3">
+                    <div class="row">
+                        <div class="col-12">
+                            Will be ready soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
     </div>
-</div>
 
-<ng-template #EmergencyNum>
-    <h2 mat-dialog-title>Emergency Dial</h2>
-    <table class="table align-middle table-striped table-hover table-borderless">
-        <tbody>
-            <tr *ngFor="let row of emergencynum" class="text-white">
-                <td scope="col">{{row.name}}</td>
-                <td scope="col">
-                    <a href="tel:{{row.num}}">
-                        <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
-                                class="fa fa-phone "></i></button>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div mat-control-actions>
-        <button mat-button mat-dialog-close> Close </button>
-    </div>
-</ng-template>
+    <ng-template #EmergencyNum>
+        <h2 mat-dialog-title>Emergency Dial</h2>
+        <table class="table align-middle table-striped table-hover table-borderless">
+            <tbody>
+                <tr *ngFor="let row of emergencynum" class="text-white">
+                    <td scope="col">{{row.name}}</td>
+                    <td scope="col">
+                        <a href="tel:{{row.num}}">
+                            <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                    class="fa fa-phone "></i></button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div mat-control-actions>
+            <button mat-button mat-dialog-close> Close </button>
+        </div>
+    </ng-template>
 
-<ng-template #HospitalNum>
-    <h2 mat-dialog-title>Hospital Dial</h2>
-    <table class="table align-middle table-striped table-hover table-borderless">
-        <tbody>
-            <tr *ngFor="let row of hospitals" class="text-white">
-                <td scope="col">{{row.name}}</td>
-                <td scope="col">
-                    <a href="tel:{{row.num}}">
-                        <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
-                                class="fa fa-phone "></i></button>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div mat-control-actions>
-        <button mat-button mat-dialog-close> Close </button>
-    </div>
-</ng-template>
+    <ng-template #HospitalNum>
+        <h2 mat-dialog-title>Hospital Dial</h2>
+        <table class="table align-middle table-striped table-hover table-borderless">
+            <tbody>
+                <tr *ngFor="let row of hospitals" class="text-white">
+                    <td scope="col">{{row.name}}</td>
+                    <td scope="col">
+                        <a href="tel:{{row.num}}">
+                            <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                    class="fa fa-phone "></i></button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div mat-control-actions>
+            <button mat-button mat-dialog-close> Close </button>
+        </div>
+    </ng-template>
 
-<ng-template #ControlRoomNum>
-    <h2 mat-dialog-title>Control Rooms</h2>
-    <table class="table align-middle table-striped table-hover table-borderless">
-        <tbody>
-            <tr *ngFor="let row of controlroom" class="text-white">
-                <td scope="col">{{row.name}}</td>
-                <td scope="col">
-                    <a href="tel:{{row.num}}">
-                        <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
-                                class="fa fa-phone "></i></button>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div mat-control-actions>
-        <button mat-button mat-dialog-close> Close </button>
-    </div>
-</ng-template>
+    <ng-template #ControlRoomNum>
+        <h2 mat-dialog-title>Control Rooms</h2>
+        <table class="table align-middle table-striped table-hover table-borderless">
+            <tbody>
+                <tr *ngFor="let row of controlroom" class="text-white">
+                    <td scope="col">{{row.name}}</td>
+                    <td scope="col">
+                        <a href="tel:{{row.num}}">
+                            <button type="button" class="btn btn-danger btn-rounded btn-sm"><i
+                                    class="fa fa-phone "></i></button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div mat-control-actions>
+            <button mat-button mat-dialog-close> Close </button>
+        </div>
+    </ng-template>

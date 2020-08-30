@@ -46,9 +46,10 @@ export class HomeContentComponent implements OnInit {
       // temporary for development   
       this.weather = this.temphrweather;   
       this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      this.appcomp.place =  this.tempGeoData.LocalizedName;
       this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed';
       this.appcomp.District = this.tempGeoData.SupplementalAdminAreas[0].LocalizedName;
-      console.log(this.district)
+      console.log(this.appcomp.District)
     });
 
   }
@@ -58,10 +59,11 @@ export class HomeContentComponent implements OnInit {
       .subscribe(response => {
         this.locationKey = response.Key;
         this.Place = response.LocalizedName + ', ' + response.AdministrativeArea.LocalizedName;
+        this.appcomp.place = response.LocalizedName;
         this.appcomp.placeURL = 'https://maps.google.com/maps?q=' + response.LocalizedName + '&t=&z=13&ie=UTF8&iwloc=&output=embed'
         console.log(this.locationKey)
         this.appcomp.District = response.SupplementalAdminAreas[0].LocalizedName;
-        console.log(this.district)
+        console.log(this.appcomp.District)
         this.getHourlyWeather()
       });
   }
