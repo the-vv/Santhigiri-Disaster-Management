@@ -1,0 +1,20 @@
+[debug] [2020-08-30T17:56:12.648Z] ----------------------------------------------------------------------
+[debug] [2020-08-30T17:56:12.651Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-30T17:56:12.651Z] CLI Version:   8.4.2
+[debug] [2020-08-30T17:56:12.651Z] Platform:      win32
+[debug] [2020-08-30T17:56:12.651Z] Node Version:  v12.16.1
+[debug] [2020-08-30T17:56:12.657Z] Time:          Sun Aug 30 2020 23:26:12 GMT+0530 (India Standard Time)
+[debug] [2020-08-30T17:56:12.657Z] ----------------------------------------------------------------------
+[debug] [2020-08-30T17:56:12.657Z] 
+[debug] [2020-08-30T17:56:12.669Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-30T17:56:12.670Z] > authorizing via signed-in user
+[debug] [2020-08-30T17:56:12.670Z] [iam] checking project santhigiridm for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-30T17:56:12.672Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-08-30T17:56:12.672Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-08-30T17:56:13.093Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 30 Aug 2020 17:56:12 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-30T17:56:13.099Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/santhigiridm:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-30T17:56:14.897Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 30 Aug 2020 17:56:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1149","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-30T17:56:14.898Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/santhigiridm  
+ 

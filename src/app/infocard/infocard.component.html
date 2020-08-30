@@ -75,7 +75,8 @@
                         <div class="districts">
                             <table class="table align-middle table-striped table-hover table-borderless">
                                 <tbody>
-                                    <tr *ngFor="let row of Districts" class="text-white" [ngClass]="{'d-none': row==App.District.toLowerCase()}">
+                                    <tr *ngFor="let row of Districts" class="text-white"
+                                        [ngClass]="{'d-none': row==App.District.toLowerCase()}">
                                         <td scope="col">{{row | titlecase}}</td>
                                         <td scope="col">
                                             <button type="button" class="btn btn-light btn-rounded btn-sm"
