@@ -1,5 +1,6 @@
 <div class="container-fluid text-white text-left ">
-    <mat-tab-group mat-align-tabs="center" dynamicHeight>
+    <mat-tab-group mat-align-tabs="center" dynamicHeight [selectedIndex]="tabIndex"
+        (selectedIndexChange)="selectedIndexChange($event)">
         <mat-tab label="Helplines">
             <div class="container">
                 <div class="">
@@ -7,7 +8,7 @@
                         Kerala Helplines:
                     </div>
                     <div class="col-12">
-                        <table class="table table-borderless table-hover align-middle">
+                        <table class="table table-borderless table-hover align-middle table-sm">
                             <tbody>
                                 <tr class="h5 py-3 text-white">
                                     <td>Emergency Numbers: </td>
@@ -34,6 +35,11 @@
                         </table>
                     </div>
                     <div class="col-12 text-center">
+                        <button type="button" class="btn btn-danger btn-lg btn-rounded btn-sm btn-block" (click)="gotoReport()">
+                            <span class="col-12 d-block"> Report {{App.place}} <i class="fa fa-flag"></i></span>
+                        </button>
+                    </div>
+                    <div class="col-12 text-center mt-3">
                         <a href="tel:108">
                             <button type="button" class="btn btn-primary btn-lg btn-rounded btn-sm btn-block">
                                 <span class="col-12 d-block"> Call 108 Now <i class="fa fa-phone "></i></span>
@@ -41,7 +47,8 @@
                         </a>
                     </div>
                     <div class="text-info col-12 text-center" style="font-size: .75em;">(Disaster Management
-                        Services)</div>
+                        Services)
+                    </div>
                 </div>
             </div>
         </mat-tab>
@@ -90,14 +97,8 @@
                 </div>
             </div>
         </mat-tab>
-        <mat-tab label="Register">
-            <div class="container p-3">
-                <div class="">
-                    <div class="col-12">
-                        Will be ready soon
-                    </div>
-                </div>
-            </div>
+        <mat-tab label="Report">
+            <app-regster-form></app-regster-form>
         </mat-tab>
     </mat-tab-group>
 

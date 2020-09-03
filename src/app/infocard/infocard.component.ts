@@ -13,6 +13,7 @@ export class InfocardComponent implements OnInit {
 
   districtNow: string;
   Districts = [];
+  tabIndex = 0
 
   constructor(public dialog: MatDialog,
     public App: AppComponent) { }
@@ -23,6 +24,15 @@ export class InfocardComponent implements OnInit {
     } 
     this.Districts.sort()
   }
+
+  gotoReport(){
+    this.tabIndex = 2
+  }
+
+  selectedIndexChange(val :number ){
+    this.tabIndex=val;
+  }
+
   openDistrict(dist, distr) {
     this.dialog.open(DistrictDialogeComponent, {
       data: {

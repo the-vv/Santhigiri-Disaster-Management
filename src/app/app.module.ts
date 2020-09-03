@@ -14,7 +14,10 @@ import { NewscardsComponent } from './newscards/newscards.component';
 import { HomeContentComponent } from '././home-content/home-content.component';
 
 import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +28,7 @@ import { InfocardComponent } from './infocard/infocard.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DistrictDialogeComponent } from './district-dialoge/district-dialoge.component';
+import { RegsterFormComponent } from './regster-form/regster-form.component';
 
 
 
@@ -46,7 +50,8 @@ var firebaseConfig = {
     SafePipe,
     HomeContentComponent,
     InfocardComponent,
-    DistrictDialogeComponent
+    DistrictDialogeComponent,
+    RegsterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -59,11 +64,12 @@ var firebaseConfig = {
     MatButtonModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     AppComponent
-
   ],
   bootstrap: [AppComponent]
 })

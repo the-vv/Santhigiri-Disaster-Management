@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-danger">
+                This will Report {{appcomp.place}} to Santgiri Servers.
+            </h3>
+        </div>
+        <div class="col-12">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Any additional if any</mat-label>
+                    <textarea matInput rows="3" formControlName="info"></textarea>
+                </mat-form-field>
+                <button type="submit" class="btn btn-danger btn-sm">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

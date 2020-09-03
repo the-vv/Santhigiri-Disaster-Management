@@ -41,15 +41,15 @@ export class HomeContentComponent implements OnInit {
       this.lot = pos.lng;
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
-      this.getWeatherkey();
+      // this.getWeatherkey();
  
       // temporary for development   
-      // this.weather = this.temphrweather;   
-      // this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
-      // this.appcomp.place =  this.tempGeoData.LocalizedName;
-      // this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed';
-      // this.appcomp.District = this.tempGeoData.SupplementalAdminAreas[0].LocalizedName;
-      // console.log(this.appcomp.District)
+      this.weather = this.temphrweather;   
+      this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
+      this.appcomp.place =  this.tempGeoData.LocalizedName;
+      this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed';
+      this.appcomp.District = this.tempGeoData.SupplementalAdminAreas[0].LocalizedName;
+      console.log(this.appcomp.District)
     });
 
   }
