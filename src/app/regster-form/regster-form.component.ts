@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { AppComponent } from '../app.component';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-regster-form',
@@ -29,7 +28,7 @@ export class RegsterFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      info: ['']
+      info: ''
     });
     this.getAll();
   }
