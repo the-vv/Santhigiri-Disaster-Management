@@ -50,7 +50,7 @@ export class RegsterFormComponent implements OnInit {
         );
         return false;
       });
-      console.log(this.items);
+      // console.log(this.items);
       this.ref.detectChanges();
     });
   }
@@ -63,7 +63,7 @@ export class RegsterFormComponent implements OnInit {
       this.Data.place = this.appcomp.place;
       this.Data.district = this.appcomp.District;
       this.Data.info = this.registerForm.value.info;
-      console.log(this.Data);
+      // console.log(this.Data);
       this.db.list("DisasterDB").push(this.Data);
       this.onReset();
       this.submited = true

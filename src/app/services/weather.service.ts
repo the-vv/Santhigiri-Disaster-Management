@@ -12,7 +12,7 @@ export class WeatherService {
   }
 
   getKey(lat: number, lot: number): Observable<any> {
-    console.log(lat + ',' + lot);
+    // console.log(lat + ',' + lot);
     return this.http.get<any>('https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Z12rLGHLn6PxyxMLhvfiWQ8kAmcihdCr&q=' + lot + ',' + lat)
   }
 

@@ -89,10 +89,10 @@ export class NewscardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.setNews();
+    this.setNews();
 
     //  temporary for development
-    this.news = temparticle;
+    // this.news = temparticle;
 
   }
 
@@ -100,7 +100,7 @@ export class NewscardsComponent implements OnInit {
     this.News.getNews()
       .subscribe(response => {
         this.news = response;
-        console.log(this.news);
+        // console.log(this.news);
       });
   }
 
