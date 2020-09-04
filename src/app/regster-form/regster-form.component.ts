@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { AppComponent } from '../app.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-regster-form',
@@ -24,7 +25,8 @@ export class RegsterFormComponent implements OnInit {
   constructor(private db: AngularFireDatabase,
     private formBuilder: FormBuilder,
     private ref: ChangeDetectorRef,
-    public appcomp: AppComponent) { }
+    public appcomp: AppComponent,
+    private SnackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -63,7 +65,10 @@ export class RegsterFormComponent implements OnInit {
     console.log(this.Data);
     this.db.list("DisasterDB").push(this.Data);
     this.onReset();
-    alert(this.appcomp.place + ' Reported')    
+    // alert(this.appcomp.place + ' Reported')  
+    this.SnackBar.open(this.appcomp.place + ' Reported', 'Dismiss', {
+      duration: 3000,
+    });
   }
 
   onReset() {

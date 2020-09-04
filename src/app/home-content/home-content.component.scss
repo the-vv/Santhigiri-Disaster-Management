@@ -16,7 +16,7 @@
 
 @media (min-width:768px){
   .card, .infoCard, .loading{
-    height: 65vh;
+    height: 45vh;
   }
 }
 
@@ -47,6 +47,7 @@
     display: inline;
   }
 }
+
 @media screen and (min-width:1025px){
   .phone{
       display: none;

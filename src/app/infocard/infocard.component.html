@@ -34,7 +34,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center"  *ngIf="!w_md">
                         <button type="button" class="btn btn-danger btn-lg btn-rounded btn-sm btn-block" (click)="gotoReport()">
                             <span class="col-12 d-block"> Report {{App.place}} <i class="fa fa-flag"></i></span>
                         </button>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </mat-tab>
-        <mat-tab label="Report">
+        <mat-tab label="Report"  *ngIf="!w_md">
             <app-regster-form></app-regster-form>
         </mat-tab>
     </mat-tab-group>

@@ -27,6 +27,7 @@ export class HomeContentComponent implements OnInit {
   Dailyweather: Array<any>;
   Place: string;
   district: string;
+  w_md: boolean;
 
   constructor(
     private Location: LocationService,
@@ -35,6 +36,9 @@ export class HomeContentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.w_md = window.innerWidth > 768 ? true : false;
+    console.log(this.w_md)
 
     this.Location.getPosition().then(pos => {
       this.lat = pos.lat;
@@ -157,7 +161,7 @@ export class HomeContentComponent implements OnInit {
     "Key": "2875829",
     "Type": "City",
     "Rank": 55,
-    "LocalizedName": "Nellaya",
+    "LocalizedName": "Thodupuzha",
     "EnglishName": "Nellaya",
     "PrimaryPostalCode": "",
     "Region": {
@@ -206,7 +210,7 @@ export class HomeContentComponent implements OnInit {
     "SupplementalAdminAreas": [
       {
         "Level": 2,
-        "LocalizedName": "Palakkad",
+        "LocalizedName": "Idukki",
         "EnglishName": "Palakkad"
       },
       {

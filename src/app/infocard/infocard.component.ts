@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog,  } from '@angular/material/dialog';
+import { MatDialog, } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
 import { DistrictDialogeComponent } from '../district-dialoge/district-dialoge.component'
 
@@ -14,34 +14,41 @@ export class InfocardComponent implements OnInit {
   districtNow: string;
   Districts = [];
   tabIndex = 0
+  w_md: boolean
 
   constructor(public dialog: MatDialog,
     public App: AppComponent) { }
 
   ngOnInit(): void {
+
+
+    this.w_md = window.innerWidth > 768 ? true : false;
+    console.log(this.w_md)
+
     for (let district of Object.keys(this.DistrictWise)) {
       this.Districts.push(district)
-    } 
+    }
     this.Districts.sort()
   }
 
-  gotoReport(){
+  gotoReport() {
     this.tabIndex = 2
   }
 
-  selectedIndexChange(val :number ){
-    this.tabIndex=val;
+  selectedIndexChange(val: number) {
+    this.tabIndex = val;
   }
 
   openDistrict(dist, distr) {
     this.dialog.open(DistrictDialogeComponent, {
+      minWidth: "300px",
       data: {
         data: dist,
         district: distr
       }
     });
   }
-  
+
 
   openModal(templateRef) {
     this.dialog.open(templateRef, {
