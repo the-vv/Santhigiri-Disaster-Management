@@ -1,5 +1,28 @@
+<div class="container-fluid d-none d-md-block">
+  <div class="row bg-white p-2 d-flex align-items-center header-banner">
+    <div class="col-3 text-center">
+      <img src="../assets/images/Logo.png" alt="" height="80px">
+    </div>
+    <div class="col-auto h-100">
+      <p class="header-title text-center text-black p-0 m-0">
+        Santhigiri College
+      </p>
+      <p class="p-0 m-0 text-center">
+        Affiliated to MG University and Approved by AICTE
+      </p>
+    </div>
+    <div class="col text-center">
+      <p class="h2">
+        Disaster Management System
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
 <div id="main-home">
-  <div class="container-fluid">
+  <div class="container-fluid cards">
     <div class="row">
       <div class="col-md-5 text-center">
         <div class="infoCard">
@@ -21,11 +44,10 @@
         <div class="card" *ngIf="weather">
           <div class="card-header d-flex align-items-center text-center">
             <span class="d-none d-md-block">
-              <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png" height="15px"
-              alt=""></a>
+              <a href="http://www.accuweather.com/" target=""><img src="../../assets/weatherIcons/logo.png"
+                  height="15px" alt=""></a>
             </span>
-            <span class="d-md-none"
-              *ngFor="let day of weather">{{Place}}</span>
+            <span class="d-md-none" *ngFor="let day of weather">{{Place}}</span>
           </div>
           <div class="card-body px-0" *ngFor="let day of weather">
             <h1 class="text-info card-title d-none d-md-block text-center" style="font-size: 5em;">

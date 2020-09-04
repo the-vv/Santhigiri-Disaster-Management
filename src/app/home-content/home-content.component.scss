@@ -9,6 +9,15 @@
     text-shadow: -2px 3px 7px #000000;
     background-color: rgba($color: #000000, $alpha: 0.3);
   }
+
+  .header-title{
+    font-family: Neuton !important;
+    font-size: 41px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: normal;
+  }
+
 .card, .loading{
   background-color: rgba($color: #000000, $alpha: 0.5);
   color: white;
@@ -17,6 +26,9 @@
 @media (min-width:768px){
   .card, .infoCard, .loading{
     height: 45vh;
+  }
+  .cards{
+    margin-top: 3rem;
   }
 }
 
