@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MatDialog, } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
 import { DistrictDialogeComponent } from '../district-dialoge/district-dialoge.component'
@@ -23,12 +23,17 @@ export class InfocardComponent implements OnInit {
 
 
     this.w_md = window.innerWidth > 768 ? true : false;
-    console.log(this.w_md)
 
     for (let district of Object.keys(this.DistrictWise)) {
       this.Districts.push(district)
     }
     this.Districts.sort()
+  }
+
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.w_md = window.innerWidth > 768 ? true : false;
   }
 
   gotoReport() {

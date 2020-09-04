@@ -12,7 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class RegsterFormComponent implements OnInit {
 
-  
+  submited:boolean = false;
   registerForm: FormGroup;
   public items: Array<any> = [];
   public itemRef: firebase.database.Reference;
@@ -56,29 +56,32 @@ export class RegsterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.registerForm.invalid) {
-      return;
+    if(!this.submited){
+      if (this.registerForm.invalid) {
+        return;
+      }
+      this.Data.place = this.appcomp.place;
+      this.Data.district = this.appcomp.District;
+      this.Data.info = this.registerForm.value.info;
+      console.log(this.Data);
+      this.db.list("DisasterDB").push(this.Data);
+      this.onReset();
+      this.submited = true
+      // alert(this.appcomp.place + ' Reported')  
+      this.SnackBar.open(this.appcomp.place + ' Reported', 'Dismiss', {
+        duration: 3000,
+      });
     }
-    this.Data.place = this.appcomp.place;
-    this.Data.district = this.appcomp.District;
-    this.Data.info = this.registerForm.value.info;
-    console.log(this.Data);
-    this.db.list("DisasterDB").push(this.Data);
-    this.onReset();
-    // alert(this.appcomp.place + ' Reported')  
-    this.SnackBar.open(this.appcomp.place + ' Reported', 'Dismiss', {
-      duration: 3000,
-    });
+    else{
+      this.SnackBar.open(this.appcomp.place + ' Already Reported', 'Dismiss', {
+        duration: 3000,
+      });
+    }
   }
 
   onReset() {
     this.registerForm.reset();
   }
 
-  goBack() {
-  }
-
-  goToList() {
-  }
 }
 

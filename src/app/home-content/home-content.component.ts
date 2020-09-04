@@ -1,16 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { LocationService } from '../services/location.service';
 import { WeatherService } from '../services/weather.service';
 import { AppComponent } from '../app.component';
-
-export class Weather {
-  Date: string;
-  EpochDate: number;
-  Temperature: Array<any>;
-  Day: Array<any>;
-  Night: Array<any>;
-}
-
 
 @Component({
   selector: 'app-home-content',
@@ -32,13 +23,13 @@ export class HomeContentComponent implements OnInit {
   constructor(
     private Location: LocationService,
     private wKey: WeatherService,
-    private appcomp: AppComponent
-  ) { }
+    private appcomp: AppComponent) { }
+
 
   ngOnInit(): void {
 
     this.w_md = window.innerWidth > 768 ? true : false;
-    console.log(this.w_md)
+    // console.log(this.w_md)
 
     this.Location.getPosition().then(pos => {
       this.lat = pos.lat;
@@ -46,17 +37,24 @@ export class HomeContentComponent implements OnInit {
       console.log(`Positon: ${this.lot} ${this.lat}`);
 
       // this.getWeatherkey();
- 
+
       // temporary for development   
-      this.weather = this.temphrweather;   
+      this.weather = this.temphrweather;
       this.Place = this.tempGeoData.LocalizedName + ', ' + this.tempGeoData.AdministrativeArea.LocalizedName;
-      this.appcomp.place =  this.tempGeoData.LocalizedName;
+      this.appcomp.place = this.tempGeoData.LocalizedName;
       this.appcomp.placeURL = 'https://maps.google.com/maps?q=olamattom&t=&z=13&ie=UTF8&iwloc=&output=embed';
       this.appcomp.District = this.tempGeoData.SupplementalAdminAreas[0].LocalizedName;
       console.log(this.appcomp.District)
     });
 
   }
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.w_md = window.innerWidth > 768 ? true : false;
+  }
+
 
   getWeatherkey() {
     this.wKey.getKey(this.lot, this.lat)
@@ -72,7 +70,7 @@ export class HomeContentComponent implements OnInit {
       });
   }
 
-  getHourlyWeather(){
+  getHourlyWeather() {
     this.wKey.getHRWeather(this.locationKey)
       .subscribe(response => {
         this.weather = response;
