@@ -31,6 +31,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DistrictDialogeComponent } from './district-dialoge/district-dialoge.component';
 import { RegsterFormComponent } from './regster-form/regster-form.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 
 
@@ -53,7 +54,8 @@ var firebaseConfig = {
     HomeContentComponent,
     InfocardComponent,
     DistrictDialogeComponent,
-    RegsterFormComponent
+    RegsterFormComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
