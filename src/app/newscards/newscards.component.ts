@@ -17,6 +17,45 @@ export class SafePipe implements PipeTransform {
 
 }
 
+
+export class NEWS {
+  timestamp: number;
+  articleCount: number;
+  articles: Array<any>;
+}
+
+@Component({
+  selector: 'app-newscards',
+  templateUrl: './newscards.component.html',
+  styleUrls: ['./newscards.component.scss']
+})
+export class NewscardsComponent implements OnInit {
+
+  news: NEWS;
+
+  constructor(
+    private News: NewsServiceService
+  ) { }
+
+  ngOnInit(): void {
+
+    // this.setNews();
+
+    //  temporary for development
+    this.news = temparticle;
+
+  }
+
+  setNews() {
+    this.News.getNews()
+      .subscribe(response => {
+        this.news = response;
+        // console.log(this.news);
+      });
+  }
+
+}
+
 const temparticle = {
   "timestamp": 1561732525,
   "articleCount": 10,
@@ -66,42 +105,4 @@ const temparticle = {
       }      
     }
   ]
-}
-
-export class NEWS {
-  timestamp: number;
-  articleCount: number;
-  articles: Array<any>;
-}
-
-@Component({
-  selector: 'app-newscards',
-  templateUrl: './newscards.component.html',
-  styleUrls: ['./newscards.component.scss']
-})
-export class NewscardsComponent implements OnInit {
-
-  news: NEWS;
-
-  constructor(
-    private News: NewsServiceService
-  ) { }
-
-  ngOnInit(): void {
-
-    this.setNews();
-
-    //  temporary for development
-    // this.news = temparticle;
-
-  }
-
-  setNews() {
-    this.News.getNews()
-      .subscribe(response => {
-        this.news = response;
-        // console.log(this.news);
-      });
-  }
-
 }
